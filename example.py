@@ -46,11 +46,11 @@ if __name__ == "__main__":
     index_name = "alr_test"
     
     # Insert data
-    sample_data = [
-        {"FromTime": datetime.now().isoformat(), "EventType": "Warning", "Description": "High CPU Usage"},
-        {"FromTime": datetime.now().isoformat(), "EventType": "Error", "Description": "Database Connection Lost"}
-    ]
-    insert_data(index_name, sample_data)
+    # sample_data = [
+    #     {"FromTime": datetime.now().isoformat(), "EventType": "Warning", "Description": "High CPU Usage"},
+    #     {"FromTime": datetime.now().isoformat(), "EventType": "Error", "Description": "Database Connection Lost"}
+    # ]
+    # insert_data(index_name, sample_data)
     
     # Query data
     query = {
