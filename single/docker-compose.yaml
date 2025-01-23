@@ -7,7 +7,8 @@ services:
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
-      - xpack.security.http.ssl:enabled=false
+      - xpack.security.transport.ssl.enabled=false
+      - ELASTIC_PASSWORD=sammy
       - "ES_JAVA_OPTS=-Xms4g -Xmx4g"
     ulimits:
       memlock:
@@ -28,9 +29,8 @@ services:
     links:
       - elasticsearch:elasticsearch
     environment:
-      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
-    volumes:
-      - ./config/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
+    - SERVER_HOST="0.0.0.0"
+    - ELASTICSEARCH_HOSTS=["http://elasticsearch:9200"]
     depends_on:
       - elasticsearch
     networks:
